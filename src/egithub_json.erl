@@ -30,7 +30,7 @@
 %% @doc Encodes the json() value using the specified implementation module
 %%      found in the <code>egithub</code> application <code>json</code> env
 %%      variable. The default implementation module is
-%%      <code>egithub_jiffy</code>.
+%%      <code>egithub_jsx</code>.
 %% @end
 -spec encode(json()) -> binary().
 encode(Map) ->
@@ -40,7 +40,7 @@ encode(Map) ->
 %% @doc Decodes the JSON value as iodata() using the specified implementation
 %%      module found in the <code>egithub</code> application <code>json</code>
 %%      env variable. The default implementation module is
-%%      <code>egithub_jiffy</code>.
+%%      <code>egithub_jsx</code>.
 %% @end
 -spec decode(iodata()) -> json().
 decode(Map) ->
@@ -53,4 +53,4 @@ decode(Map) ->
 
 -spec json_module() -> atom().
 json_module() ->
-  application:get_env(egithub, json, egithub_jiffy).
+  application:get_env(egithub, json, egithub_jsx).

@@ -1,6 +1,6 @@
-%% @doc Implementation jiffy module for <code>egithub_json</code> behavior.
+%% @doc Implementation jsx module for <code>egithub_json</code> behavior.
 %% @hidden
--module(egithub_jiffy).
+-module(egithub_jsx).
 
 -behaviour(egithub_json).
 
@@ -15,8 +15,8 @@
 
 -spec encode(map()) -> binary().
 encode(Map) ->
-  jiffy:encode(Map).
+  jsx:encode(Map).
 
 -spec decode(binary()) -> map().
 decode(Json) ->
-  jiffy:decode(Json, [return_maps]).
+  jsx:decode(Json, [return_maps]).
